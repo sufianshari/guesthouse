@@ -35,6 +35,20 @@
                         ); ?>
                     </div>
                 </div>
+                <?php if(!empty($pic_halaman)) {?>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Gambar <?php echo form_error('pic_halaman') ?></label>
+                        <div class="col-sm-10">
+                            <img src="<?php echo base_url(); ?>uploads/foto_halaman/<?php echo $pic_halaman ?>" class="img-responsive" style="max-width: 150px;" alt=""/>
+                        </div>
+                    </div>
+                <?php } ?>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="varchar">Gambar <?php echo form_error('pic_halaman') ?></label>
+                    <div class="col-sm-10">
+                        <input type="file" name="userfile" id="userfile" class="" title="Pilih File" accept="image/*"/>
+                    </div>
+                </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <input type="hidden" name="id_halaman" value="<?php echo $id_halaman; ?>" />

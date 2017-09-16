@@ -1,7 +1,9 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Kurma Sufi
- * Date: 29/08/2017
- * Time: 6:28
- */
+<section class="section-header page-title title-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <h1>Room</h1>
+            </div>
+        </div>
+    </div>
+</section>

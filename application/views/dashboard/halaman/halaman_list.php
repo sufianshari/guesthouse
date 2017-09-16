@@ -41,6 +41,7 @@
                     <th class="text-center">No</th>
                     <th class="text-center">Judul</th>
                     <th class="text-center">Aktif</th>
+                    <th class="text-center">Gambar</th>
                     <th class="text-center">Tgl. Update</th>
                     <th class="text-center">Action</th>
                 </tr><?php
@@ -52,7 +53,7 @@
                         <td class="text-center"><?php echo ++$start ?></td>
                         <td><?php echo $halaman->judul ?></td>
                         <td class="text-center"><?php echo $halaman->aktif_hal ?></td>
-                        <!--<td><?php /*echo tgl_indo_timestamp($halaman->tgl_update); */?></td>-->
+                        <td class="text-center"><img src="<?php echo base_url(); ?>uploads/foto_halaman/<?php echo $halaman->pic_halaman; ?>" style="max-width: 80px;" alt=""/></td>
                         <td class="text-center"><?php echo $halaman->tgl_update; ?></td>
                         <td class="text-center">
                             <div class="btn-group btn-group-xs" role="group">

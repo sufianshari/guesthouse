@@ -377,6 +377,7 @@ class M_dashboard extends CI_Model
         $this->db->like('id_halaman', $keyword);
         $this->db->or_like('judul', $keyword);
         $this->db->or_like('judul_seo', $keyword);
+        $this->db->or_like('pic_halaman', $keyword);
         $this->db->or_like('isi_halaman', $keyword);
         $this->db->from($this->table_halaman);
         return $this->db->count_all_results();
@@ -387,6 +388,7 @@ class M_dashboard extends CI_Model
         $this->db->like('id_halaman', $keyword);
         $this->db->or_like('judul', $keyword);
         $this->db->or_like('judul_seo', $keyword);
+        $this->db->or_like('pic_halaman', $keyword);
         $this->db->or_like('isi_halaman', $keyword);
         $this->db->limit($limit, $start);
         return $this->db->get($this->table_halaman)->result();
@@ -410,6 +412,67 @@ class M_dashboard extends CI_Model
     }
 
 
+    /* ------------------------------- Manajemen Fasilitas Kamar-------------------------------*/
+    public $table_fasilitas = 'fasilitas';
+    public $id_fasilitas = 'id_fasilitas';
+    public $order_fasilitas = 'ASC';
+    // get all
+    function get_all_fasilitas()
+    {
+        $this->db->order_by($this->id_fasilitas, $this->order_fasilitas);
+        return $this->db->get($this->table_fasilitas)->result();
+    }
+    // get data by id
+    function get_by_id_fasilitas($id)
+    {
+        $this->db->where($this->id_fasilitas, $id);
+        return $this->db->get($this->table_fasilitas)->row();
+    }
+    // get total rows
+    function total_rows_fasilitas() {
+        $this->db->from($this->table_fasilitas);
+        return $this->db->count_all_results();
+    }
+    // get data with limit
+    function index_limit_fasilitas($limit, $start = 0) {
+        $this->db->order_by($this->id_fasilitas, $this->order_fasilitas);
+        $this->db->limit($limit, $start);
+        return $this->db->get($this->table_fasilitas)->result();
+    }
+    // get search total rows
+    function search_total_rows_fasilitas($keyword = NULL) {
+        $this->db->like('id_fasilitas', $keyword);
+        $this->db->or_like('nm_fasilitas', $keyword);
+        $this->db->or_like('seo_fasilitas', $keyword);
+        $this->db->from($this->table_fasilitas);
+        return $this->db->count_all_results();
+    }
+    // get search data with limit
+    function search_index_limit_fasilitas($limit, $start = 0, $keyword = NULL) {
+        $this->db->order_by($this->id_fasilitas, $this->order_fasilitas);
+        $this->db->like('id_fasilitas', $keyword);
+        $this->db->or_like('nm_fasilitas', $keyword);
+        $this->db->or_like('seo_fasilitas', $keyword);
+        $this->db->limit($limit, $start);
+        return $this->db->get($this->table_fasilitas)->result();
+    }
+    // insert data
+    function insert_fasilitas($data)
+    {
+        $this->db->insert($this->table_fasilitas, $data);
+    }
+    // update data
+    function update_fasilitas($id, $data)
+    {
+        $this->db->where($this->id_fasilitas, $id);
+        $this->db->update($this->table_fasilitas, $data);
+    }
+    // delete data
+    function delete_fasilitas($id)
+    {
+        $this->db->where($this->id_fasilitas, $id);
+        $this->db->delete($this->table_fasilitas);
+    }
 
 
 

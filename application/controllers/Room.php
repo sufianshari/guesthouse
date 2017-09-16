@@ -12,8 +12,8 @@ class Room extends CI_Controller {
     
     public $data = array(
         'main_view'     => 'public/room/room',
-        'judul_pendek'  => 'Lookbook',
-        'judul_lengkap' => 'Lookbook',
+        'judul_pendek'  => 'Room',
+        'judul_lengkap' => 'Room',
     );
 
     public function __construct()
@@ -27,7 +27,7 @@ class Room extends CI_Controller {
 
     public function index()
     {
-        $this->data['data_room']      = $this->room->get_room();
+//        $this->data['data_room']      = $this->room->get_room();
 
         $this->load->view('public/public',$this->data);
     }

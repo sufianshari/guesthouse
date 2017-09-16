@@ -1,14 +1,8 @@
-<section class="breadcrumbs" style="background-image: url(<?php echo base_url();?>uploads/system/about.jpg)">
+<section class="section-header page-title title-center">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <h1 class="h1">Reservation</h1>
-            </div>
-            <div class="col-md-6">
-                <ol class="breadcrumb">
-                    <li><a href="<?php echo base_url();?>home/">Home</a><i class="fa fa-angle-right"></i></li>
-                    <li class="active">Reservation</li>
-                </ol>
+            <div class="col-md-12 col-xs-12">
+                <h1>Reservation</h1>
             </div>
         </div>
     </div>
