@@ -46,7 +46,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="varchar">Gambar <?php echo form_error('pic_halaman') ?></label>
                     <div class="col-sm-10">
-                        <input type="file" name="userfile" id="userfile" class="" title="Pilih File" accept="image/*"/>
+                        <input type="file" name="userfile" id="userfile" class="" title="Pilih File" />
                     </div>
                 </div>
                 <div class="form-group">

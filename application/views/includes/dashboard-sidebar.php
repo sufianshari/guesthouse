@@ -7,9 +7,9 @@
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url(); ?>dashboard/identitas/"><i class="fa fa-circle-o"></i><span>Konfigurasi Website</span></a></li>
                     <li><a href="<?php echo base_url(); ?>dashboard/halaman/"><i class="fa fa-circle-o"></i><span>Halaman Statis</span></a></li>
-                    <li><a href="<?php echo base_url(); ?>dashboard/users/"><i class="fa fa-circle-o"></i><span>Master Users</span></a></li>
+<!--                    <li><a href="--><?php //echo base_url(); ?><!--dashboard/users/"><i class="fa fa-circle-o"></i><span>Master Users</span></a></li>-->
                     <li><a href="<?php echo base_url(); ?>dashboard/slider/"><i class="fa fa-circle-o"></i><span>Slider</span></a></li>
-                    <li><a href="<?php echo base_url(); ?>dashboard/change_password/"><i class="fa fa-key"></i><span>Ganti Password</span></a></li>
+<!--                    <li><a href="--><?php //echo base_url(); ?><!--dashboard/change_password/"><i class="fa fa-key"></i><span>Ganti Password</span></a></li>-->
                 </ul>
             </li>
             <li class="treeview">
@@ -17,7 +17,7 @@
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url(); ?>dashboard/kamar/"><i class="fa fa-circle-o"></i> Kamar</a></li>
                     <li><a href="<?php echo base_url(); ?>dashboard/fasilitas/"><i class="fa fa-circle-o"></i> Fasilitas Kamar</a></li>
-                    <li><a href="<?php echo base_url(); ?>dashboard/laporan/"><i class="fa fa-circle-o"></i> Laporan Penjualan</a></li>
+                    <li><a href="<?php echo base_url(); ?>dashboard/reservation/"><i class="fa fa-circle-o"></i> Laporan Reservasi</a></li>
                 </ul>
             </li>
             <li class="treeview">

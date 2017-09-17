@@ -15,9 +15,9 @@
             <?php
             if($data_gallery) :
                 foreach ($data_gallery as $gallery) : ?>
-                    <div class="col-sm-6 col-md-4">
+                    <div class="col-sm-6 col-md-3">
                         <a class="lightbox" href="<?php echo base_url(); ?>uploads/foto_galeri/<?php echo $gallery['pic_galeri'];?>">
-                            <img src="<?php echo base_url(); ?>uploads/foto_galeri/<?php echo $gallery['pic_galeri'];?>" style="min-height: 200px; max-height: 230px;" alt="<?php echo $gallery['nm_album'];?>">
+                            <img src="<?php echo base_url(); ?>uploads/foto_galeri/<?php echo $gallery['pic_galeri'];?>" style="height: 170px;" alt="<?php echo $gallery['nm_album'];?>">
                         </a>
                     </div>
 

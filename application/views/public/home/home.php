@@ -1,4 +1,4 @@
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide slider-home" data-ride="carousel">
 
     <?php if($slider_data) : ?>
 
@@ -55,3 +55,33 @@
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
     <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 </div>
+
+<div class="container">
+    <h3 class="lined-heading"><span>All Room</span></h3>
+    <div class="tz-gallery">
+        <div class="row">
+            <?php if($room_data) :
+                foreach ($room_data as $kamar) :  ?>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <a class="lightbox" href="<?php echo base_url(); ?>uploads/foto_kamar/<?php echo $kamar->pic_kamar; ?>">
+                                <img src="<?php echo base_url(); ?>uploads/foto_kamar/<?php echo $kamar->pic_kamar; ?>" alt="<?php echo $kamar->nm_kamar; ?>" style="max-height: 160px;">
+                            </a>
+                            <div class="caption">
+                                <h3><?php echo $kamar->nm_kamar; ?></h3>
+                                <h4 class="text-primary">IDR. <?php echo format_rupiah($kamar->harga_kamar); ?></h4>
+                                <p><?php echo $kamar->fasilitas; ?></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <?php
+                endforeach;
+            else:
+                echo notify('Data Kamar Belum Tersedia','info');
+            endif; ?>
+        </div>
+    </div>
+</div>
+
+

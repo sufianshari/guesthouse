@@ -16,8 +16,18 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>templates/guesthouse/css/gallery-grid.css" media="all">
+<link rel="stylesheet" href="<?php echo base_url(); ?>templates/guesthouse/css/thumbnail-gallery.css" media="all">
 
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" media="all">
 
 <link rel="stylesheet" href="<?php echo base_url(); ?>templates/guesthouse/css/styles.css" media="all">
+<!--Jquery-->
+<script type="text/javascript" src="<?php echo base_url(); ?>templates/guesthouse/js/jquery.min.js"></script>
+<!--Jquery UI-->
+<link rel="stylesheet" href="<?php echo base_url(); ?>templates/guesthouse/libs/jquery-ui/jquery-ui.min.css" media="all">
+<link rel="stylesheet" href="<?php echo base_url(); ?>templates/guesthouse/libs/jquery-ui/jquery-ui.theme.min.css" media="all">
+<script type="text/javascript" src="<?php echo base_url(); ?>templates/guesthouse/libs/jquery-ui/jquery-ui.min.js"></script>
 
+<script type="text/javascript" src="<?php echo base_url(); ?>templates/guesthouse/libs/bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="<?php echo base_url(); ?>templates/guesthouse/js/main.js"></script>

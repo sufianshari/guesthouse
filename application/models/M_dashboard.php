@@ -416,30 +416,26 @@ class M_dashboard extends CI_Model
     public $table_fasilitas = 'fasilitas';
     public $id_fasilitas = 'id_fasilitas';
     public $order_fasilitas = 'ASC';
-    // get all
+
     function get_all_fasilitas()
     {
         $this->db->order_by($this->id_fasilitas, $this->order_fasilitas);
         return $this->db->get($this->table_fasilitas)->result();
     }
-    // get data by id
     function get_by_id_fasilitas($id)
     {
         $this->db->where($this->id_fasilitas, $id);
         return $this->db->get($this->table_fasilitas)->row();
     }
-    // get total rows
     function total_rows_fasilitas() {
         $this->db->from($this->table_fasilitas);
         return $this->db->count_all_results();
     }
-    // get data with limit
     function index_limit_fasilitas($limit, $start = 0) {
         $this->db->order_by($this->id_fasilitas, $this->order_fasilitas);
         $this->db->limit($limit, $start);
         return $this->db->get($this->table_fasilitas)->result();
     }
-    // get search total rows
     function search_total_rows_fasilitas($keyword = NULL) {
         $this->db->like('id_fasilitas', $keyword);
         $this->db->or_like('nm_fasilitas', $keyword);
@@ -447,7 +443,6 @@ class M_dashboard extends CI_Model
         $this->db->from($this->table_fasilitas);
         return $this->db->count_all_results();
     }
-    // get search data with limit
     function search_index_limit_fasilitas($limit, $start = 0, $keyword = NULL) {
         $this->db->order_by($this->id_fasilitas, $this->order_fasilitas);
         $this->db->like('id_fasilitas', $keyword);
@@ -456,18 +451,15 @@ class M_dashboard extends CI_Model
         $this->db->limit($limit, $start);
         return $this->db->get($this->table_fasilitas)->result();
     }
-    // insert data
     function insert_fasilitas($data)
     {
         $this->db->insert($this->table_fasilitas, $data);
     }
-    // update data
     function update_fasilitas($id, $data)
     {
         $this->db->where($this->id_fasilitas, $id);
         $this->db->update($this->table_fasilitas, $data);
     }
-    // delete data
     function delete_fasilitas($id)
     {
         $this->db->where($this->id_fasilitas, $id);
@@ -650,432 +642,143 @@ class M_dashboard extends CI_Model
     }
 
 
-    /* ------------------------------- Manajemen Tour -------------------------------*/
-    public $table_tour = 'tour';
-    public $id_tour = 'id_tour';
-    public $order_tour = 'DESC';
-    // get all
-    function get_all_tour()
-    {
-        $this->db->select("*")
-            ->from("tour")
-            ->join('kategori','tour.id_kategori = kategori.id_kategori')
-            ->order_by('tour.id_tour', 'DESC');
-        return $this->db->get()->result();
-    }
+    /* ------------------------------- Manajemen Album Foto -------------------------------*/
+    public $table_kamar = 'kamar';
+    public $id_kamar = 'id_kamar';
+    public $order_kamar = 'DESC';
 
-    // get data by id
-    function get_by_id_tour($id)
+    function get_all_kamar()
     {
-        $data = $this->db->select("*")
-            ->from("tour")
-            ->join('kategori','tour.id_kategori = kategori.id_kategori')
-            ->where($this->id_tour, $id)
-            ->get()
-            ->row();
-        return $data;
+        $this->db->order_by($this->id_kamar, $this->order_kamar);
+        return $this->db->get($this->table_kamar)->result();
     }
-
-    // get total rows
-    function total_rows_tour() {
-        $this->db->from($this->table_tour);
+    function get_by_id_kamar($id)
+    {
+        $this->db->where($this->id_kamar, $id);
+        return $this->db->get($this->table_kamar)->row();
+    }
+    function total_rows_kamar() {
+        $this->db->from($this->table_kamar);
         return $this->db->count_all_results();
     }
-
-    // get data with limit
-    function index_limit_tour($limit, $start = 0) {
-        $data = $this->db->select("*")
-            ->from($this->table_tour)
-            ->join('kategori','tour.id_kategori = kategori.id_kategori')
-            ->order_by('kategori.id_kategori', 'ASC')
-            ->limit($limit, $start)
-            ->get()
-            ->result();
-        return $data;
-    }
-
-    // get search total rows
-    function search_total_rows_tour($keyword = NULL) {
-        $this->db->like('id_tour', $keyword);
-        $this->db->or_like('id_kategori', $keyword);
-        $this->db->or_like('nm_tour_id', $keyword);
-        $this->db->or_like('nm_tour_en', $keyword);
-        $this->db->or_like('nm_tour_jp', $keyword);
-        $this->db->or_like('tour_seo', $keyword);
-        $this->db->or_like('aktif_tour', $keyword);
-        $this->db->or_like('ket_id', $keyword);
-        $this->db->or_like('ket_en', $keyword);
-        $this->db->or_like('ket_jp', $keyword);
-        $this->db->or_like('gambar', $keyword);
-        $this->db->from($this->table_tour);
-        return $this->db->count_all_results();
-    }
-
-    // get search data with limit
-    function search_index_limit_tour($limit, $start = 0, $keyword = NULL) {
-        $this->db->order_by($this->id_tour, $this->order_tour);
-        $this->db->like('id_tour', $keyword);
-        $this->db->or_like('id_kategori', $keyword);
-        $this->db->or_like('nm_tour_id', $keyword);
-        $this->db->or_like('nm_tour_en', $keyword);
-        $this->db->or_like('nm_tour_jp', $keyword);
-        $this->db->or_like('tour_seo', $keyword);
-        $this->db->or_like('aktif_tour', $keyword);
-        $this->db->or_like('ket_id', $keyword);
-        $this->db->or_like('ket_en', $keyword);
-        $this->db->or_like('ket_jp', $keyword);
-        $this->db->or_like('gambar', $keyword);
+    function index_limit_kamar($limit, $start = 0) {
+        $this->db->order_by($this->id_kamar, $this->order_kamar);
         $this->db->limit($limit, $start);
-        return $this->db->get($this->table_tour)->result();
+        return $this->db->get($this->table_kamar)->result();
     }
-
-    // insert data
-    function insert_tour($data)
-    {
-        $this->db->insert($this->table_tour, $data);
-    }
-
-    // update data
-    function update_tour($id, $data)
-    {
-        $this->db->where($this->id_tour, $id);
-        $this->db->update($this->table_tour, $data);
-    }
-
-    // delete data
-    function delete_tour($id)
-    {
-        $this->db->where($this->id_tour, $id);
-        $this->db->delete($this->table_tour);
-    }
-
-
-
-
-
-    /* ------------------------------- Manajemen Produk -------------------------------*/
-    public $table_produk = 'produk';
-    public $id_produk = 'id_produk';
-    public $order_produk = 'DESC';
-    // get all
-    function get_all_produk()
-    {
-        $this->db->select("*")
-            ->from("produk")
-            ->join('kategori','produk.id_kategori = kategori.id_kategori')
-            ->order_by('produk.id_produk', 'DESC');
-        return $this->db->get()->result();
-    }
-    // get data by id
-    function get_by_id_produk($id)
-    {
-        $data = $this->db->select("*")
-            ->from("produk")
-            ->join('kategori','produk.id_kategori = kategori.id_kategori')
-            ->where($this->id_produk, $id)
-            ->get()
-            ->row();
-        return $data;
-    }
-    // get total rows
-    function total_rows_produk() {
-        $this->db->from($this->table_produk);
-        return $this->db->count_all_results();
-    }
-    // get data with limit
-    function index_limit_produk($limit, $start = 0) {
-        $data = $this->db->select("*")
-            ->from($this->table_produk)
-            ->join('kategori','produk.id_kategori = kategori.id_kategori')
-            ->order_by('kategori.id_kategori', 'ASC')
-            ->limit($limit, $start)
-            ->get()
-            ->result();
-        return $data;
-    }
-    // get search total rows
-    function search_total_rows_produk($keyword = NULL) {
-        $this->db->like('id_produk', $keyword);
-        $this->db->or_like('id_kategori', $keyword);
-        $this->db->or_like('nm_produk', $keyword);
-        $this->db->or_like('gender', $keyword);
-        $this->db->or_like('arrival', $keyword);
-        $this->db->or_like('custom', $keyword);
-        $this->db->or_like('harga', $keyword);
+    function search_total_rows_kamar($keyword = NULL) {
+        $this->db->like('id_kamar', $keyword);
+        $this->db->or_like('nm_kamar', $keyword);
+        $this->db->or_like('seo_kamar', $keyword);
+        $this->db->or_like('harga_kamar', $keyword);
         $this->db->or_like('deskripsi', $keyword);
-        $this->db->or_like('pic_produk_1', $keyword);
-        $this->db->or_like('pic_produk_2', $keyword);
-        $this->db->or_like('pic_produk_3', $keyword);
-        $this->db->or_like('pic_produk_4', $keyword);
-        $this->db->from($this->table_produk);
+        $this->db->or_like('fasilitas', $keyword);
+        $this->db->or_like('pic_kamar', $keyword);
+        $this->db->from($this->table_kamar);
         return $this->db->count_all_results();
     }
-    // get search data with limit
-    function search_index_limit_produk($limit, $start = 0, $keyword = NULL) {
-        $this->db->order_by($this->id_produk, $this->order_produk);
-        $this->db->like('id_produk', $keyword);
-        $this->db->or_like('id_kategori', $keyword);
-        $this->db->or_like('nm_produk', $keyword);
-        $this->db->or_like('gender', $keyword);
-        $this->db->or_like('arrival', $keyword);
-        $this->db->or_like('custom', $keyword);
-        $this->db->or_like('harga', $keyword);
+    function search_index_limit_kamar($limit, $start = 0, $keyword = NULL) {
+        $this->db->order_by($this->id_kamar, $this->order_kamar);
+        $this->db->like('id_kamar', $keyword);
+        $this->db->or_like('nm_kamar', $keyword);
+        $this->db->or_like('seo_kamar', $keyword);
+        $this->db->or_like('harga_kamar', $keyword);
         $this->db->or_like('deskripsi', $keyword);
-        $this->db->or_like('pic_produk_1', $keyword);
-        $this->db->or_like('pic_produk_2', $keyword);
-        $this->db->or_like('pic_produk_3', $keyword);
-        $this->db->or_like('pic_produk_4', $keyword);
+        $this->db->or_like('fasilitas', $keyword);
+        $this->db->or_like('pic_kamar', $keyword);
         $this->db->limit($limit, $start);
-        return $this->db->get($this->table_produk)->result();
+        return $this->db->get($this->table_kamar)->result();
     }
-    // insert data
-    function insert_produk($data)
+    function insert_kamar($data)
     {
-        $this->db->insert($this->table_produk, $data);
-        $last_id = $this->db->insert_id();
-        return $last_id;
+        $this->db->insert($this->table_kamar, $data);
     }
-    // update data
-    function update_produk($id, $data)
+    function update_kamar($id, $data)
     {
-        $this->db->where($this->id_produk, $id);
-        $this->db->update($this->table_produk, $data);
+        $this->db->where($this->id_kamar, $id);
+        $this->db->update($this->table_kamar, $data);
     }
-    // delete data
-    function delete_produk($id)
+    function delete_kamar($id)
     {
-        $this->db->where($this->id_produk, $id);
-        $this->db->delete($this->table_produk);
+        $this->db->where($this->id_kamar, $id);
+        $this->db->delete($this->table_kamar);
     }
 
 
-    /* ------------------------------- Manajemen Berita -------------------------------*/
-    public $table_berita = 'berita';
-    public $id_berita = 'id_berita';
-    public $order_berita = 'DESC';
-    // get all
-    function get_all_berita()
+    /* ------------------------------- Manajemen Fasilitas Kamar-------------------------------*/
+    public $table_reservation = 'reservation';
+    public $id_reservation = 'id_reservation';
+    public $order_reservation = 'DESC';
+
+    function get_all_reservation()
     {
-        $this->db->select("*")
-            ->from("berita")
-            ->order_by('berita.id_berita', 'DESC');
-        return $this->db->get()->result();
+        $this->db->order_by($this->id_reservation, $this->order_reservation);
+        return $this->db->get($this->table_reservation)->result();
     }
-    // get data by id
-    function get_by_id_berita($id)
+    function get_by_id_reservation($id)
     {
-        $data = $this->db->select("*")
-            ->from("berita")
-            ->where($this->id_berita, $id)
-            ->get()
-            ->row();
-        return $data;
+        $this->db->where($this->id_reservation, $id);
+        return $this->db->get($this->table_reservation)->row();
     }
-    // get total rows
-    function total_rows_berita() {
-        $this->db->from($this->table_berita);
+    function total_rows_reservation() {
+        $this->db->from($this->table_reservation);
         return $this->db->count_all_results();
     }
-    // get data with limit
-    function index_limit_berita($limit, $start = 0) {
-        $this->db->order_by($this->id_berita, $this->order_berita);
+    function index_limit_reservation($limit, $start = 0) {
+        $this->db->order_by($this->id_reservation, $this->order_reservation);
         $this->db->limit($limit, $start);
-        return $this->db->get($this->table_berita)->result();
+        return $this->db->get($this->table_reservation)->result();
     }
-    // get search total rows
-    function search_total_rows_berita($keyword = NULL) {
-        $this->db->like('id_berita', $keyword);
-        $this->db->or_like('username', $keyword);
-        $this->db->or_like('judul', $keyword);
-        $this->db->or_like('sub_judul', $keyword);
-        $this->db->or_like('judul_seo', $keyword);
-        $this->db->or_like('aktif', $keyword);
-        $this->db->or_like('isi_berita', $keyword);
-        $this->db->or_like('hari', $keyword);
-        $this->db->or_like('tanggal', $keyword);
-        $this->db->or_like('gambar', $keyword);
-        $this->db->or_like('dibaca', $keyword);
-        $this->db->or_like('tag', $keyword);
-        $this->db->from($this->table_berita);
+    function search_total_rows_reservation($keyword = NULL) {
+        $this->db->like('id_reservation', $keyword);
+        $this->db->or_like('check_in', $keyword);
+        $this->db->or_like('check_out', $keyword);
+        $this->db->or_like('first_name', $keyword);
+        $this->db->or_like('last_name', $keyword);
+        $this->db->or_like('adult_count', $keyword);
+        $this->db->or_like('chilt_count', $keyword);
+        $this->db->or_like('email', $keyword);
+        $this->db->or_like('phone', $keyword);
+        $this->db->or_like('created_at', $keyword);
+        $this->db->or_like('updated_at', $keyword);
+        $this->db->or_like('deleted_at', $keyword);
+        $this->db->from($this->table_reservation);
         return $this->db->count_all_results();
     }
-    // get search data with limit
-    function search_index_limit_berita($limit, $start = 0, $keyword = NULL) {
-        $this->db->order_by($this->id_berita, $this->order_berita);
-        $this->db->like('id_berita', $keyword);
-        $this->db->or_like('username', $keyword);
-        $this->db->or_like('judul', $keyword);
-        $this->db->or_like('sub_judul', $keyword);
-        $this->db->or_like('judul_seo', $keyword);
-        $this->db->or_like('aktif', $keyword);
-        $this->db->or_like('isi_berita', $keyword);
-        $this->db->or_like('hari', $keyword);
-        $this->db->or_like('tanggal', $keyword);
-        $this->db->or_like('gambar', $keyword);
-        $this->db->or_like('dibaca', $keyword);
-        $this->db->or_like('tag', $keyword);
+    function search_index_limit_reservation($limit, $start = 0, $keyword = NULL) {
+        $this->db->order_by($this->id_reservation, $this->order_reservation);
+        $this->db->like('id_reservation', $keyword);
+        $this->db->or_like('check_in', $keyword);
+        $this->db->or_like('check_out', $keyword);
+        $this->db->or_like('first_name', $keyword);
+        $this->db->or_like('last_name', $keyword);
+        $this->db->or_like('adult_count', $keyword);
+        $this->db->or_like('chilt_count', $keyword);
+        $this->db->or_like('email', $keyword);
+        $this->db->or_like('phone', $keyword);
+        $this->db->or_like('created_at', $keyword);
+        $this->db->or_like('updated_at', $keyword);
+        $this->db->or_like('deleted_at', $keyword);
         $this->db->limit($limit, $start);
-        return $this->db->get($this->table_berita)->result();
+        return $this->db->get($this->table_reservation)->result();
     }
-    // insert data
-    function insert_berita($data)
+    function insert_reservation($data)
     {
-        $this->db->insert($this->table_berita, $data);
+        $this->db->insert($this->table_reservation, $data);
     }
-    // update data
-    function update_berita($id, $data)
+    function update_reservation($id, $data)
     {
-        $this->db->where($this->id_berita, $id);
-        $this->db->update($this->table_berita, $data);
+        $this->db->where($this->id_reservation, $id);
+        $this->db->update($this->table_reservation, $data);
     }
-    // delete data
-    function delete_berita($id)
+    function delete_reservation($id)
     {
-        $this->db->where($this->id_berita, $id);
-        $this->db->delete($this->table_berita);
+        $this->db->where($this->id_reservation, $id);
+        $this->db->delete($this->table_reservation);
     }
 
 
-    /* ------------------------------- Manajemen Kategori Journey -------------------------------*/
-    public $table_album_journey = 'album_journey';
-    public $id_album_journey = 'id_album_journey';
-    public $order_album_journey = 'ASC';
-    // get all
-    function get_all_album_journey()
-    {
-        $this->db->order_by($this->id_album_journey, $this->order_album_journey);
-        return $this->db->get($this->table_album_journey)->result();
-    }
-    // get data by id
-    function get_by_id_album_journey($id)
-    {
-        $this->db->where($this->id_album_journey, $id);
-        return $this->db->get($this->table_album_journey)->row();
-    }
-    // get total rows
-    function total_rows_album_journey() {
-        $this->db->from($this->table_album_journey);
-        return $this->db->count_all_results();
-    }
-    // get data with limit
-    function index_limit_album_journey($limit, $start = 0) {
-        $this->db->order_by($this->id_album_journey, $this->order_album_journey);
-        $this->db->limit($limit, $start);
-        return $this->db->get($this->table_album_journey)->result();
-    }
-    // get search total rows
-    function search_total_rows_album_journey($keyword = NULL) {
-        $this->db->like('id_album_journey', $keyword);
-        $this->db->or_like('nm_album_journey', $keyword);
-        $this->db->from($this->table_album_journey);
-        return $this->db->count_all_results();
-    }
-    // get search data with limit
-    function search_index_limit_album_journey($limit, $start = 0, $keyword = NULL) {
-        $this->db->order_by($this->id_album_journey, $this->order_album_journey);
-        $this->db->like('id_album_journey', $keyword);
-        $this->db->or_like('nm_album_journey', $keyword);
-        $this->db->limit($limit, $start);
-        return $this->db->get($this->table_album_journey)->result();
-    }
-    // insert data
-    function insert_album_journey($data)
-    {
-        $this->db->insert($this->table_album_journey, $data);
-    }
-    // update data
-    function update_album_journey($id, $data)
-    {
-        $this->db->where($this->id_album_journey, $id);
-        $this->db->update($this->table_album_journey, $data);
-    }
-    // delete data
-    function delete_album_journey($id)
-    {
-        $this->db->where($this->id_album_journey, $id);
-        $this->db->delete($this->table_album_journey);
-    }
 
-    /* ------------------------------- Manajemen Galeri Journey -------------------------------*/
-    public $table_galeri_journey = 'galeri_journey';
-    public $id_galeri_journey = 'id_galeri_journey';
-    public $order_galeri_journey = 'DESC';
-    // get all
-    function get_all_galeri_journey()
-    {
-        $this->db->select("galeri_journey.id_galeri_journey, galeri_journey.nm_galeri_journey, album_journey.id_album_journey, album_journey.nm_album_journey, galeri_journey.pic_galeri_journey")
-            ->from("galeri_journey")
-            ->join('album_journey','galeri_journey.id_album_journey = album_journey.id_album_journey')
-            ->order_by('album_journey.id_album_journey', 'DESC');
-        return $this->db->get()->result_array();
-    }
 
-    // get data by id
-    function get_by_id_galeri_journey($id)
-    {
-        $data = $this->db->select("galeri_journey.id_galeri_journey, galeri_journey.nm_galeri_journey, album_journey.id_album_journey, album_journey.nm_album_journey, galeri_journey.pic_galeri_journey")
-            ->from("galeri_journey")
-            ->join('album_journey','galeri_journey.id_album_journey = album_journey.id_album_journey')
-            ->where($this->id_galeri_journey, $id)
-            ->get()
-            ->row();
-        return $data;
-    }
 
-    // get total rows
-    function total_rows_galeri_journey() {
-        $this->db->from($this->table_galeri_journey);
-        return $this->db->count_all_results();
-    }
-
-    // get data with limit
-    function index_limit_galeri_journey($limit, $start = 0) {
-        $data = $this->db->select("galeri_journey.id_galeri_journey, galeri_journey.nm_galeri_journey, album_journey.id_album_journey, album_journey.nm_album_journey, galeri_journey.pic_galeri_journey")
-            ->from($this->table_galeri_journey)
-            ->join('album_journey','galeri_journey.id_album_journey = album_journey.id_album_journey')
-            ->order_by('album_journey.id_album_journey', 'DESC')
-            ->limit($limit, $start)
-            ->get()
-            ->result();
-        return $data;
-    }
-
-    // get search total rows
-    function search_total_rows_galeri_journey($keyword = NULL) {
-        $this->db->like('id_galeri_journey', $keyword);
-        $this->db->or_like('nm_galeri_journey', $keyword);
-        $this->db->or_like('pic_galeri_journey', $keyword);
-        $this->db->from($this->table_galeri_journey);
-        return $this->db->count_all_results();
-    }
-
-    // get search data with limit
-    function search_index_limit_galeri_journey($limit, $start = 0, $keyword = NULL) {
-        $this->db->order_by($this->id_galeri_journey, $this->order_galeri_journey);
-        $this->db->like('id_galeri_journey', $keyword);
-        $this->db->or_like('nm_galeri_journey', $keyword);
-        $this->db->or_like('pic_galeri_journey', $keyword);
-        $this->db->limit($limit, $start);
-        return $this->db->get($this->table_galeri_journey)->result();
-    }
-
-    // insert data
-    function insert_galeri_journey($data)
-    {
-        $this->db->insert($this->table_galeri_journey, $data);
-    }
-
-    // update data
-    function update_galeri_journey($id, $data)
-    {
-        $this->db->where($this->id_galeri_journey, $id);
-        $this->db->update($this->table_galeri_journey, $data);
-    }
-
-    // delete data
-    function delete_galeri_journey($id)
-    {
-        $this->db->where($this->id_galeri_journey, $id);
-        $this->db->delete($this->table_galeri_journey);
-    }
 }

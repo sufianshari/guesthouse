@@ -13,6 +13,7 @@ class About extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('M_about', 'about', TRUE);
+        $this->load->model('M_room', 'room', TRUE);
 
         $this->load->model('M_identitas', 'identitas', TRUE);
         $this->data['iden_data']      = $this->identitas->get_identitas();
@@ -24,6 +25,8 @@ class About extends CI_Controller {
         $row = $this->about->get_halaman($id);
         $this->data['data_halaman']  = $row;
         $this->data['judul_pendek'] = $row->judul;
+
+        $this->data['room_data'] = $this->room->get_all_room_home();
 
         $this->load->view('public/public',$this->data);
     }

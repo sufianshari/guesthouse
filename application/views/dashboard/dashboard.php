@@ -110,6 +110,9 @@
 
     $(document).ready(function() {
         $(".selectFilter").select2();
+        $(".selectFilterMulti").select2({
+            placeholder: "Silahkan Pilih",
+        });
     });
 
     $("#btnSubmit").click(function(){

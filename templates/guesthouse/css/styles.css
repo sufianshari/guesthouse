@@ -3,7 +3,7 @@
 body {
     background-color: #fcfcfc;
     background-image: url('../images/cream_pixels.png');
-    padding-top: 62px;
+    padding-top: 60px;
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -12,10 +12,39 @@ body {
 }
 @media (min-width: 992px) {
     body {
-        padding-top: 64px;
+        padding-top: 60px;
     }
 }
 
+.slider-home {
+    margin-bottom: 30px;
+}
+
+.lined-heading {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    display: block;
+}
+h1.lined-heading:before, h2.lined-heading:before, h3.lined-heading:before, h4.lined-heading:before, h5.lined-heading:before, h6.lined-heading:before {
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 1px;
+    border-top: 2px solid #ccc;
+    content: "";
+}
+h1.lined-heading span, h2.lined-heading span, h3.lined-heading span, h4.lined-heading span, h5.lined-heading span, h6.lined-heading span {
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+    background: url('../images/cream_pixels.png');
+    display: inline-block;
+}
 /******************************************** Page Title *********************************************/
 .section-header {
     height: 50px;

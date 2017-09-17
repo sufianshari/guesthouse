@@ -55,7 +55,7 @@ class Contact extends CI_Controller {
 
             $this->kontak->insert_hubungi($data);
             $this->session->set_flashdata('message', 'Pengisian Formulir Kontak Kami Berhasil!');
-            redirect(site_url('kontak/'));
+            redirect(site_url('contact/'));
         }
     }
 
