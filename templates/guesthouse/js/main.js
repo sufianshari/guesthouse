@@ -27,24 +27,24 @@ jQuery(document).ready(function () {
     // Reservation Form
     //jQueryUI - Datepicker
     if (jQuery().datepicker) {
-        jQuery('#checkin').datepicker({
+        jQuery('#check_in').datepicker({
             showAnim: "drop",
             dateFormat: "yy/mm/dd",
             minDate: "-0D"
         });
 
-        jQuery('#checkout').datepicker({
+        jQuery('#check_out').datepicker({
             showAnim: "drop",
             dateFormat: "yy/mm/dd",
             minDate: "-0D",
             beforeShow: function () {
-                var a = jQuery("#checkin").datepicker('getDate');
+                var a = jQuery("#check_in").datepicker('getDate');
                 if (a) return {
                     minDate: a
                 }
             }
         });
-        jQuery('#checkin, #checkout').on('focus', function () {
+        jQuery('#check_in, #check_out').on('focus', function () {
             jQuery(this).blur();
         }); // Remove virtual keyboard on touch devices
     }

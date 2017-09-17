@@ -60,8 +60,8 @@
                         <td><?php echo $reservation->first_name; ?>, <?php echo $reservation->last_name; ?></td>
                         <td><?php echo $reservation->email; ?></td>
                         <td><?php echo $reservation->phone; ?></td>
-                        <td class="text-center"><?php echo tgl_indo_timestamp($reservation->created_at); ?></td>
                         <td class="text-center"><?php echo $reservation->adult_count; ?>/<?php echo $reservation->child_count; ?></td>
+                        <td class="text-center"><?php echo tgl_jam_indo2($reservation->created_at); ?></td>
                     </tr>
                     <?php
                 }

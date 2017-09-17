@@ -47,10 +47,10 @@ class Booking extends CI_Controller {
             redirect(site_url('booking/'));
         } else {
             $data = array(
-                'check_in' => $this->input->post('checkin',TRUE),
-                'check_out' => $this->input->post('checkout',TRUE),
-                'adult_count' => $this->input->post('adult',TRUE),
-                'child_count' => $this->input->post('child',TRUE),
+                'check_in' => $this->input->post('check_in',TRUE),
+                'check_out' => $this->input->post('check_out',TRUE),
+                'adult_count' => $this->input->post('adult_count',TRUE),
+                'child_count' => $this->input->post('child_count',TRUE),
                 'first_name' => $this->input->post('first_name',TRUE),
                 'last_name' => $this->input->post('last_name',TRUE),
                 'email' => $this->input->post('email',TRUE),
@@ -65,12 +65,12 @@ class Booking extends CI_Controller {
 
     function _rules_booking()
     {
-        $this->form_validation->set_rules('checkin', ' ', 'trim|required');
-        $this->form_validation->set_rules('checkout', ' ', 'trim|required');
+        $this->form_validation->set_rules('check_in', ' ', 'trim|required');
+        $this->form_validation->set_rules('check_out', ' ', 'trim|required');
         $this->form_validation->set_rules('first_name', ' ', 'trim|required');
         $this->form_validation->set_rules('last_name', ' ', 'trim|required');
-        $this->form_validation->set_rules('adult', ' ', 'trim|required');
-        $this->form_validation->set_rules('child', ' ', 'trim|required');
+        $this->form_validation->set_rules('adult_count', ' ', 'trim|required');
+        $this->form_validation->set_rules('child_count', ' ', 'trim|required');
         $this->form_validation->set_rules('email', ' ', 'trim|required');
         $this->form_validation->set_rules('phone', ' ', 'trim|required');
 

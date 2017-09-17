@@ -19,7 +19,7 @@ class Contact extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('M_about', 'about', TRUE);
+        $this->load->model('M_contact', 'contact', TRUE);
 
         $this->load->model('M_identitas', 'identitas', TRUE);
         $this->data['iden_data']      = $this->identitas->get_identitas();
@@ -53,7 +53,7 @@ class Contact extends CI_Controller {
                 'pesan' => $this->input->post('pesan',TRUE),
             );
 
-            $this->kontak->insert_hubungi($data);
+            $this->contact->insert_hubungi($data);
             $this->session->set_flashdata('message', 'Pengisian Formulir Kontak Kami Berhasil!');
             redirect(site_url('contact/'));
         }
