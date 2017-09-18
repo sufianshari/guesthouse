@@ -686,7 +686,7 @@ if ( ! function_exists('_shutdown_handler'))
 		if (isset($last_error) &&
 			($last_error['type'] & (E_ERROR | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING)))
 		{
-			_error_handler($last_error['type'], $last_error['message'], $last_error['file'], $last_error['line']);
+			_error_handler($last_error['type'], $last_error['Hubungi'], $last_error['file'], $last_error['line']);
 		}
 	}
 }

@@ -526,7 +526,7 @@ class Auth extends CI_Controller {
 
 		if (!$this->ion_auth->logged_in() || (!$this->ion_auth->is_admin() && !($this->ion_auth->user()->row()->id == $id)))
 		{
-			redirect('auth', 'refresh');
+			redirect('dashboard/login', 'refresh');
 		}
 
 		$user = $this->ion_auth->user($id)->row();
@@ -636,35 +636,41 @@ class Auth extends CI_Controller {
 			'name'  => 'first_name',
 			'id'    => 'first_name',
 			'type'  => 'text',
+			'class'  => 'form-control',
 			'value' => $this->form_validation->set_value('first_name', $user->first_name),
 		);
 		$this->data['last_name'] = array(
 			'name'  => 'last_name',
 			'id'    => 'last_name',
 			'type'  => 'text',
+            'class'  => 'form-control',
 			'value' => $this->form_validation->set_value('last_name', $user->last_name),
 		);
 		$this->data['company'] = array(
 			'name'  => 'company',
 			'id'    => 'company',
 			'type'  => 'text',
+            'class'  => 'form-control',
 			'value' => $this->form_validation->set_value('company', $user->company),
 		);
 		$this->data['phone'] = array(
 			'name'  => 'phone',
 			'id'    => 'phone',
 			'type'  => 'text',
+            'class'  => 'form-control',
 			'value' => $this->form_validation->set_value('phone', $user->phone),
 		);
 		$this->data['password'] = array(
 			'name' => 'password',
 			'id'   => 'password',
-			'type' => 'password'
+			'type' => 'password',
+            'class'  => 'form-control'
 		);
 		$this->data['password_confirm'] = array(
 			'name' => 'password_confirm',
 			'id'   => 'password_confirm',
-			'type' => 'password'
+			'type' => 'password',
+			'class'  => 'form-control'
 		);
 
 		$this->_render_page('auth/edit_user', $this->data);

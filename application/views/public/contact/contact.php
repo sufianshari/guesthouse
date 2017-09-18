@@ -12,6 +12,11 @@
 
 <div class="container">
     <div class="row">
+        <?php if (!empty($this->session->userdata('message'))) :
+            echo notify($this->session->userdata('message'),'info');
+        endif ?>
+    </div>
+    <div class="row">
         <div class="col-md-8">
             <div class="well well-sm">
                 <form action="<?php echo $action;?>" method="POST">

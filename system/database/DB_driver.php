@@ -511,7 +511,7 @@ abstract class CI_DB_driver {
 	 */
 	public function error()
 	{
-		return array('code' => NULL, 'message' => NULL);
+		return array('code' => NULL, 'Hubungi' => NULL);
 	}
 
 	// --------------------------------------------------------------------
@@ -668,7 +668,7 @@ abstract class CI_DB_driver {
 			$error = $this->error();
 
 			// Log errors
-			log_message('error', 'Query error: '.$error['message'].' - Invalid query: '.$sql);
+			log_message('error', 'Query error: '.$error['Hubungi'].' - Invalid query: '.$sql);
 
 			if ($this->db_debug)
 			{
@@ -688,7 +688,7 @@ abstract class CI_DB_driver {
 				}
 
 				// Display errors
-				return $this->display_error(array('Error Number: '.$error['code'], $error['message'], $sql));
+				return $this->display_error(array('Error Number: '.$error['code'], $error['Hubungi'], $sql));
 			}
 
 			return FALSE;

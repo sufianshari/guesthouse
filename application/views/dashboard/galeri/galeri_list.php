@@ -43,7 +43,6 @@
                     <th class="text-center">Gambar</th>
                     <th class="text-center">Action</th>
                 </tr><?php
-                $start=0;
                 foreach ($galeri_data as $galeri)
                 {
                     ?>

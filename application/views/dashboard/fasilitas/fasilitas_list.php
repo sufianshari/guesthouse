@@ -44,7 +44,6 @@
                     <th class="text-center">Fasilitas</th>
                     <th class="text-center" width="150px">Proses</th>
                 </tr><?php
-                $start = 0;
                 foreach ($fasilitas_data as $fasilitas)
                 {
                     ?>
@@ -55,7 +54,7 @@
                             <div class="btn-group btn-group-xs" role="group">
                                 <?php
                                 echo anchor(site_url('dashboard/fasilitas/update/'.$fasilitas->id_fasilitas),'Update', 'class="btn btn-warning"');
-                                echo anchor(site_url('dashboard/fasilitas/delete/'.$fasilitas->id_fasilitas),'Delete', 'class="btn btn-danger" onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
+//                                echo anchor(site_url('dashboard/fasilitas/delete/'.$fasilitas->id_fasilitas),'Delete', 'class="btn btn-danger" onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
                                 ?>
                             </div>
 

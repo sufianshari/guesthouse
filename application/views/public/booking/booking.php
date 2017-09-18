@@ -10,11 +10,14 @@
     </div>
 </section>
 
-<section class="not-found">
-    <div class="container">
-        <div class="row">
-            <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
-        </div>
+<div class="container">
+
+    <div class="row">
+        <?php if (!empty($this->session->userdata('message'))) :
+            echo notify($this->session->userdata('message'),'info');
+        endif ?>
+    </div>
+    <div class="well ">
         <form action="<?php echo $action;?>" method="post" class="form-horizontal">
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="check_in">Check In</label>
@@ -33,13 +36,23 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="adult">Adult Count</label>
+                <label class="col-sm-2 control-label" for="adult_count">Adult Count</label>
                 <div class="col-sm-4">
-                    <input required name="adult_count" type="number" id="adult_count" value="" class="form-control input-sm" placeholder="Adult Count"/>
+                    <select name="adult_count" id="adult_count" class="form-control input-sm select2">
+                        <?php for($i=0; $i<=20; $i++){?>
+                            <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                        <?php }?>
+                    </select>
+                    <!--                    <input required name="adult_count" type="number" id="adult_count" value="" class="form-control input-sm" placeholder="Adult Count"/>-->
                 </div>
-                <label class="col-sm-2 control-label" for="child">Child Count</label>
+                <label class="col-sm-2 control-label" for="child_count">Child Count</label>
                 <div class="col-sm-4">
-                    <input required name="child_count" type="number" id="child_count" value="" class="form-control input-sm" placeholder="Child Count"/>
+                    <select name="child_count" id="child_count" class="form-control input-sm select2">
+                        <?php for($i=0; $i<=20; $i++){?>
+                            <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                        <?php }?>
+                    </select>
+                    <!--                    <input required name="child_count" type="number" id="child_count" value="" class="form-control input-sm" placeholder="Child Count"/>-->
                 </div>
             </div>
             <div class="form-group">
@@ -76,6 +89,5 @@
                 </div>
             </div>
         </form>
-
     </div>
-</section>
+</div>

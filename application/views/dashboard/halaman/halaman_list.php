@@ -45,7 +45,6 @@
                     <th class="text-center">Tgl. Update</th>
                     <th class="text-center">Action</th>
                 </tr><?php
-                $start=0;
                 foreach ($halaman_data as $halaman)
                 {
                     ?>

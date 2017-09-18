@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><?php echo $judul_pendek; ?> - <?php echo $iden_data['nm_website']; ?></title>
+    <title><?php echo $judul_pendek; ?> | <?php echo $iden_data['nm_website']; ?></title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>templates/adminlte/plugins/font-awesome-4.7.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- fullCalendar 2.2.5-->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>templates/adminlte/plugins/fullcalendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>templates/adminlte/plugins/fullcalendar/fullcalendar.print.css" media="print">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>templates/adminlte/dist/css/AdminLTE.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>templates/adminlte/dist/css/styles.css">
@@ -104,7 +107,9 @@
 <script src="<?php echo base_url(); ?>templates/adminlte/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url(); ?>templates/adminlte/dist/js/app.min.js"></script>
-
+<!-- fullCalendar 2.2.5 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<script src="<?php echo base_url(); ?>templates/adminlte/plugins/fullcalendar/fullcalendar.min.js"></script>
 
 <script type="text/javascript">
 

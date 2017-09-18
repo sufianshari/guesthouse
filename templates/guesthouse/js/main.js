@@ -4,6 +4,12 @@
 jQuery(document).ready(function () {
     "use strict";
 
+    $(".select2").select2();
+    $(".selectFilter").select2();
+    $(".selectFilterMulti").select2({
+        placeholder: "Silahkan Pilih",
+    });
+
     // GO TOP
     //Show or hide "#go-top"
     jQuery(window).scroll(function () {

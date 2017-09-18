@@ -364,7 +364,7 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 	 */
 	public function error()
 	{
-		$error = array('code' => '00000', 'message' => '');
+		$error = array('code' => '00000', 'Hubungi' => '');
 		$sqlsrv_errors = sqlsrv_errors(SQLSRV_ERR_ERRORS);
 
 		if ( ! is_array($sqlsrv_errors))
@@ -382,9 +382,9 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 			$error['code'] = $sqlsrv_error['code'];
 		}
 
-		if (isset($sqlsrv_error['message']))
+		if (isset($sqlsrv_error['Hubungi']))
 		{
-			$error['message'] = $sqlsrv_error['message'];
+			$error['Hubungi'] = $sqlsrv_error['Hubungi'];
 		}
 
 		return $error;

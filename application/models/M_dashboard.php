@@ -87,7 +87,7 @@ class M_dashboard extends CI_Model
 
     /* ------------------------------- Manajemen User-------------------------------*/
     public $table_users = 'users';
-    public $id_users = 'id_user';
+    public $id_users = 'id';
     public $order_users = 'ASC';
     // get all
     function get_all_users()
@@ -114,104 +114,33 @@ class M_dashboard extends CI_Model
     }
     // get search total rows
     function search_total_rows_users($keyword = NULL) {
-        $this->db->like('id_user', $keyword);
+        $this->db->like('id', $keyword);
         $this->db->or_like('username', $keyword);
-        $this->db->or_like('nama_lengkap', $keyword);
-        $this->db->or_like('stts', $keyword);
+        $this->db->or_like('password', $keyword);
+        $this->db->or_like('email', $keyword);
+        $this->db->or_like('first_name', $keyword);
+        $this->db->or_like('last_name', $keyword);
+        $this->db->or_like('company', $keyword);
+        $this->db->or_like('phone', $keyword);
         $this->db->from($this->table_users);
         return $this->db->count_all_results();
     }
     // get search data with limit
     function search_index_limit_users($limit, $start = 0, $keyword = NULL) {
         $this->db->order_by($this->id_users, $this->order_users);
-        $this->db->like('id_user', $keyword);
+        $this->db->like('id', $keyword);
         $this->db->or_like('username', $keyword);
-        $this->db->or_like('nama_lengkap', $keyword);
-        $this->db->or_like('stts', $keyword);
+        $this->db->or_like('password', $keyword);
+        $this->db->or_like('email', $keyword);
+        $this->db->or_like('first_name', $keyword);
+        $this->db->or_like('last_name', $keyword);
+        $this->db->or_like('company', $keyword);
+        $this->db->or_like('phone', $keyword);
         $this->db->limit($limit, $start);
         return $this->db->get($this->table_users)->result();
     }
-    // insert data
-    function insert_users($data)
-    {
-        $this->db->insert($this->table_users, $data);
-    }
-    // update data
-    function update_users($id, $data)
-    {
-        $this->db->where($this->id_users, $id);
-        $this->db->update($this->table_users, $data);
-    }
-    // delete data
-    function delete_users($id)
-    {
-        $this->db->where($this->id_users, $id);
-        $this->db->delete($this->table_users);
-    }
 
-    /* ------------------------------- Manajemen Kategori Produk -------------------------------*/
-    public $table_kategori = 'kategori';
-    public $id_kategori = 'id_kategori';
-    public $order_kategori = 'ASC';
-    // get all
-    function get_all_kategori()
-    {
-        $this->db->order_by($this->id_kategori, $this->order_kategori);
-        return $this->db->get($this->table_kategori)->result();
-    }
-    // get data by id
-    function get_by_id_kategori($id)
-    {
-        $this->db->where($this->id_kategori, $id);
-        return $this->db->get($this->table_kategori)->row();
-    }
-    // get total rows
-    function total_rows_kategori() {
-        $this->db->from($this->table_kategori);
-        return $this->db->count_all_results();
-    }
-    // get data with limit
-    function index_limit_kategori($limit, $start = 0) {
-        $this->db->order_by($this->id_kategori, $this->order_kategori);
-        $this->db->limit($limit, $start);
-        return $this->db->get($this->table_kategori)->result();
-    }
-    // get search total rows
-    function search_total_rows_kategori($keyword = NULL) {
-        $this->db->like('id_kategori', $keyword);
-        $this->db->or_like('nm_kategori', $keyword);
-        $this->db->or_like('gen_kategori', $keyword);
-        $this->db->or_like('seo_kategori', $keyword);
-        $this->db->from($this->table_kategori);
-        return $this->db->count_all_results();
-    }
-    // get search data with limit
-    function search_index_limit_kategori($limit, $start = 0, $keyword = NULL) {
-        $this->db->order_by($this->id_kategori, $this->order_kategori);
-        $this->db->like('id_kategori', $keyword);
-        $this->db->or_like('nm_kategori', $keyword);
-        $this->db->or_like('gen_kategori', $keyword);
-        $this->db->or_like('seo_kategori', $keyword);
-        $this->db->limit($limit, $start);
-        return $this->db->get($this->table_kategori)->result();
-    }
-    // insert data
-    function insert_kategori($data)
-    {
-        $this->db->insert($this->table_kategori, $data);
-    }
-    // update data
-    function update_kategori($id, $data)
-    {
-        $this->db->where($this->id_kategori, $id);
-        $this->db->update($this->table_kategori, $data);
-    }
-    // delete data
-    function delete_kategori($id)
-    {
-        $this->db->where($this->id_kategori, $id);
-        $this->db->delete($this->table_kategori);
-    }
+
 
     /* ------------------------------- Manajemen Slider-------------------------------*/
     public $table_slider = 'slider';
@@ -275,67 +204,6 @@ class M_dashboard extends CI_Model
         $this->db->delete($this->table_slider);
     }
 
-    /* ------------------------------- Manajemen Slider Intro-------------------------------*/
-    public $table_intro = 'intro';
-    public $id_intro = 'id_intro';
-    public $order_intro = 'DESC';
-    // get all
-    function get_all_intro()
-    {
-        $this->db->order_by($this->id_intro, $this->order_intro);
-        return $this->db->get($this->table_intro)->result();
-    }
-    // get data by id
-    function get_by_id_intro($id)
-    {
-        $this->db->where($this->id_intro, $id);
-        return $this->db->get($this->table_intro)->row();
-    }
-    // get total rows
-    function total_rows_intro() {
-        $this->db->from($this->table_intro);
-        return $this->db->count_all_results();
-    }
-    // get data with limit
-    function index_limit_intro($limit, $start = 0) {
-        $this->db->order_by($this->id_intro, $this->order_intro);
-        $this->db->limit($limit, $start);
-        return $this->db->get($this->table_intro)->result();
-    }
-    // get search total rows
-    function search_total_rows_intro($keyword = NULL) {
-        $this->db->like('id_intro', $keyword);
-        $this->db->or_like('nm_intro', $keyword);
-        $this->db->or_like('gambar', $keyword);
-        $this->db->from($this->table_intro);
-        return $this->db->count_all_results();
-    }
-    // get search data with limit
-    function search_index_limit_intro($limit, $start = 0, $keyword = NULL) {
-        $this->db->order_by($this->id_intro, $this->order_intro);
-        $this->db->like('id_intro', $keyword);
-        $this->db->or_like('nm_intro', $keyword);
-        $this->db->or_like('gambar', $keyword);
-        $this->db->limit($limit, $start);
-        return $this->db->get($this->table_intro)->result();
-    }
-    // insert data
-    function insert_intro($data)
-    {
-        $this->db->insert($this->table_intro, $data);
-    }
-    // update data
-    function update_intro($id, $data)
-    {
-        $this->db->where($this->id_intro, $id);
-        $this->db->update($this->table_intro, $data);
-    }
-    // delete data
-    function delete_intro($id)
-    {
-        $this->db->where($this->id_intro, $id);
-        $this->db->delete($this->table_intro);
-    }
 
     /*-----------------------------------GANTI PASSWORD---------------------------*/
     // update data
@@ -642,7 +510,7 @@ class M_dashboard extends CI_Model
     }
 
 
-    /* ------------------------------- Manajemen Album Foto -------------------------------*/
+    /* ------------------------------- Manajemen Kamar -------------------------------*/
     public $table_kamar = 'kamar';
     public $id_kamar = 'id_kamar';
     public $order_kamar = 'DESC';
@@ -705,7 +573,7 @@ class M_dashboard extends CI_Model
     }
 
 
-    /* ------------------------------- Manajemen Fasilitas Kamar-------------------------------*/
+    /* ------------------------------- Manajemen Reservasi -------------------------------*/
     public $table_reservation = 'reservation';
     public $id_reservation = 'id_reservation';
     public $order_reservation = 'DESC';
@@ -736,7 +604,7 @@ class M_dashboard extends CI_Model
         $this->db->or_like('first_name', $keyword);
         $this->db->or_like('last_name', $keyword);
         $this->db->or_like('adult_count', $keyword);
-        $this->db->or_like('chilt_count', $keyword);
+        $this->db->or_like('child_count', $keyword);
         $this->db->or_like('email', $keyword);
         $this->db->or_like('phone', $keyword);
         $this->db->or_like('created_at', $keyword);
@@ -753,7 +621,7 @@ class M_dashboard extends CI_Model
         $this->db->or_like('first_name', $keyword);
         $this->db->or_like('last_name', $keyword);
         $this->db->or_like('adult_count', $keyword);
-        $this->db->or_like('chilt_count', $keyword);
+        $this->db->or_like('child_count', $keyword);
         $this->db->or_like('email', $keyword);
         $this->db->or_like('phone', $keyword);
         $this->db->or_like('created_at', $keyword);
@@ -778,7 +646,120 @@ class M_dashboard extends CI_Model
     }
 
 
+    //------------------------- MANAJEMEN HUBUNGI KOTAK MASUK
+    public $table_hubungi = 'hubungi';
+    public $id_hubungi = 'id_hubungi';
+    public $order_hubungi = 'DESC';
 
+    // get all
+    function get_all_hubungi()
+    {
+        $this->db->order_by($this->id_hubungi, $this->order_hubungi);
+        return $this->db->get($this->table_hubungi)->result();
+    }
+    // get data by id
+    function get_by_id_hubungi($id)
+    {
+        $this->db->where($this->id_hubungi, $id);
+        return $this->db->get($this->table_hubungi)->row();
+    }
+    // get total rows
+    function total_rows_hubungi() {
+        $this->db->from($this->table_hubungi);
+        return $this->db->count_all_results();
+    }
+    // get data with limit
+    function index_limit_hubungi($limit, $start = 0) {
+        $this->db->order_by($this->id_hubungi, $this->order_hubungi);
+        $this->db->limit($limit, $start);
+        return $this->db->get($this->table_hubungi)->result();
+    }
+    // get search total rows
+    function search_total_rows_hubungi($keyword = NULL) {
+        $this->db->like('id_hubungi', $keyword);
+        $this->db->or_like('nama', $keyword);
+        $this->db->or_like('email', $keyword);
+        $this->db->or_like('subjek', $keyword);
+        $this->db->or_like('pesan', $keyword);
+        $this->db->or_like('tanggal', $keyword);
+        $this->db->or_like('jam', $keyword);
+        $this->db->or_like('dibaca', $keyword);
+        $this->db->from($this->table_hubungi);
+        return $this->db->count_all_results();
+    }
+    // get search data with limit
+    function search_index_limit_hubungi($limit, $start = 0, $keyword = NULL) {
+        $this->db->order_by($this->id_hubungi, $this->order_hubungi);
+        $this->db->like('id_hubungi', $keyword);
+        $this->db->or_like('nama', $keyword);
+        $this->db->or_like('email', $keyword);
+        $this->db->or_like('subjek', $keyword);
+        $this->db->or_like('pesan', $keyword);
+        $this->db->or_like('tanggal', $keyword);
+        $this->db->or_like('jam', $keyword);
+        $this->db->or_like('dibaca', $keyword);
+        $this->db->limit($limit, $start);
+        return $this->db->get($this->table_hubungi)->result();
+    }
+    // insert data
+    function insert_hubungi($data)
+    {
+        $this->db->insert($this->table_hubungi, $data);
+    }
+    // update data
+    function update_hubungi($id, $data)
+    {
+        $this->db->where($this->id_hubungi, $id);
+        $this->db->update($this->table_hubungi, $data);
+    }
+    // delete data
+    function delete_hubungi($id)
+    {
+        $this->db->where($this->id_hubungi, $id);
+        $this->db->delete($this->table_hubungi);
+    }
+
+
+
+    /* ------------------------------- Manajemen Fasilitas Kamar-------------------------------*/
+    public $table_group = 'groups';
+    public $id_group = 'id';
+    public $order_group = 'ASC';
+
+    function get_all_group()
+    {
+        $this->db->order_by($this->id_group, $this->order_group);
+        return $this->db->get($this->table_group)->result();
+    }
+    function get_by_id_group($id)
+    {
+        $this->db->where($this->id_group, $id);
+        return $this->db->get($this->table_group)->row();
+    }
+    function total_rows_group() {
+        $this->db->from($this->table_group);
+        return $this->db->count_all_results();
+    }
+    function index_limit_group($limit, $start = 0) {
+        $this->db->order_by($this->id_group, $this->order_group);
+        $this->db->limit($limit, $start);
+        return $this->db->get($this->table_group)->result();
+    }
+    function search_total_rows_group($keyword = NULL) {
+        $this->db->like('id', $keyword);
+        $this->db->or_like('name', $keyword);
+        $this->db->or_like('description', $keyword);
+        $this->db->from($this->table_group);
+        return $this->db->count_all_results();
+    }
+    function search_index_limit_group($limit, $start = 0, $keyword = NULL) {
+        $this->db->order_by($this->id_group, $this->order_group);
+        $this->db->like('id', $keyword);
+        $this->db->or_like('name', $keyword);
+        $this->db->or_like('description', $keyword);
+        $this->db->limit($limit, $start);
+        return $this->db->get($this->table_group)->result();
+    }
 
 
 }

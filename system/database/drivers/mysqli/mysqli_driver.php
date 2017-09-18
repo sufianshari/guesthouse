@@ -502,11 +502,11 @@ class CI_DB_mysqli_driver extends CI_DB {
 		{
 			return array(
 				'code'    => $this->_mysqli->connect_errno,
-				'message' => $this->_mysqli->connect_error
+				'Hubungi' => $this->_mysqli->connect_error
 			);
 		}
 
-		return array('code' => $this->conn_id->errno, 'message' => $this->conn_id->error);
+		return array('code' => $this->conn_id->errno, 'Hubungi' => $this->conn_id->error);
 	}
 
 	// --------------------------------------------------------------------

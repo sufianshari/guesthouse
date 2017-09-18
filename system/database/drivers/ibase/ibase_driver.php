@@ -300,7 +300,7 @@ class CI_DB_ibase_driver extends CI_DB {
 	 */
 	public function error()
 	{
-		return array('code' => ibase_errcode(), 'message' => ibase_errmsg());
+		return array('code' => ibase_errcode(), 'Hubungi' => ibase_errmsg());
 	}
 
 	// --------------------------------------------------------------------

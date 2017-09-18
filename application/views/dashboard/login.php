@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><?php echo $judul_pendek; ?> - <?php echo $iden_data['nm_website']; ?></title>
+    <title><?php echo $judul_pendek; ?> | <?php echo $iden_data['nm_website']; ?></title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -17,6 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>templates/adminlte/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>templates/adminlte/dist/css/styles.css">
     <!-- iCheck -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>templates/adminlte/plugins/iCheck/square/blue.css">
 
@@ -27,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page bg-pic1">
 <div class="login-box">
     <div class="login-logo">
         <b>Login Administrator</b>

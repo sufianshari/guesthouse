@@ -42,7 +42,6 @@
                     <th class="text-center">Gambar</th>
                     <th class="text-center">Action</th>
                 </tr><?php
-                $start=0;
                 foreach ($album_data as $album)
                 {
                     ?>
@@ -54,7 +53,7 @@
                             <div class="btn-group btn-group-xs" role="group">
                                 <?php
                                 echo anchor(site_url('dashboard/album/update/'.$album->id_album),'Update', 'class="btn btn-warning"');
-                                echo anchor(site_url('dashboard/album/delete/'.$album->id_album),'Delete','class="btn btn-danger" onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
+//                                echo anchor(site_url('dashboard/album/delete/'.$album->id_album),'Delete','class="btn btn-danger" onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
                                 ?>
                             </div>
                         </td>

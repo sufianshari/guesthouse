@@ -31,6 +31,9 @@ class Booking extends CI_Controller {
         $this->data['captcha']          = $this->recaptcha->getWidget();
         $this->data['script_captcha']   = $this->recaptcha->getScriptTag();
 
+
+
+
         $this->load->view('public/public',$this->data);
     }
 

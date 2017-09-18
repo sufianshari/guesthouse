@@ -50,7 +50,6 @@
                     <th class="text-center">Booking Date</th>
                     <th class="text-center" width="150px">Proses</th>
                 </tr><?php
-                $start = 0;
                 foreach ($reservation_data as $reservation)
                 {
                     ?>

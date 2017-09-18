@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="box-body">
-            <form action="<?php echo $action; ?>" class="form-horizontal" method="post">
+            <form action="<?php echo $action; ?>" enctype="multipart/form-data" class="form-horizontal" method="post">
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="varchar">Judul <?php echo form_error('judul') ?></label>
                     <div class="col-sm-10">
@@ -44,9 +44,9 @@
                     </div>
                 <?php } ?>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="varchar">Gambar <?php echo form_error('pic_halaman') ?></label>
+                    <label class="col-sm-2 control-label" for="userfile">Gambar <?php echo form_error('pic_halaman') ?></label>
                     <div class="col-sm-10">
-                        <input type="file" name="userfile" id="userfile" class="" title="Pilih File" />
+                        <input type="file" name="userfile" id="userfile" class="" title="Pilih File" accept="image/*"/>
                     </div>
                 </div>
                 <div class="form-group">

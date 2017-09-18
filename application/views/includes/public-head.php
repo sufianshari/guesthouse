@@ -21,6 +21,9 @@
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" media="all">
 
 <link rel="stylesheet" href="<?php echo base_url(); ?>templates/guesthouse/css/styles.css" media="all">
+<!--Select 2-->
+<link rel="stylesheet" href="<?php echo base_url(); ?>templates/guesthouse/libs/select2/select2.min.css">
+
 <!--Jquery-->
 <script type="text/javascript" src="<?php echo base_url(); ?>templates/guesthouse/js/jquery.min.js"></script>
 <!--Jquery UI-->
@@ -29,5 +32,6 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>templates/guesthouse/libs/jquery-ui/jquery-ui.min.js"></script>
 
 <script type="text/javascript" src="<?php echo base_url(); ?>templates/guesthouse/libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url(); ?>templates/guesthouse/libs/select2/select2.full.min.js"></script>
 
 <script type="text/javascript" src="<?php echo base_url(); ?>templates/guesthouse/js/main.js"></script>

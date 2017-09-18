@@ -367,7 +367,7 @@ class CI_DB_cubrid_driver extends CI_DB {
 	 */
 	public function error()
 	{
-		return array('code' => cubrid_errno($this->conn_id), 'message' => cubrid_error($this->conn_id));
+		return array('code' => cubrid_errno($this->conn_id), 'Hubungi' => cubrid_error($this->conn_id));
 	}
 
 	// --------------------------------------------------------------------

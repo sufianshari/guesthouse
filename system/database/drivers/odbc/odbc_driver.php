@@ -408,7 +408,7 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	 */
 	public function error()
 	{
-		return array('code' => odbc_error($this->conn_id), 'message' => odbc_errormsg($this->conn_id));
+		return array('code' => odbc_error($this->conn_id), 'Hubungi' => odbc_errormsg($this->conn_id));
 	}
 
 	// --------------------------------------------------------------------

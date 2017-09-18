@@ -477,7 +477,7 @@ class CI_DB_postgre_driver extends CI_DB {
 	 */
 	public function error()
 	{
-		return array('code' => '', 'message' => pg_last_error($this->conn_id));
+		return array('code' => '', 'Hubungi' => pg_last_error($this->conn_id));
 	}
 
 	// --------------------------------------------------------------------

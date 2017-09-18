@@ -2,7 +2,7 @@
 
 body {
     background-color: #fcfcfc;
-    background-image: url('../images/cream_pixels.png');
+    background-image: url('../images/crossword.png');
     padding-top: 60px;
     font-family: 'Ubuntu', sans-serif;
 }
@@ -47,8 +47,10 @@ h1.lined-heading span, h2.lined-heading span, h3.lined-heading span, h4.lined-he
 }
 /******************************************** Page Title *********************************************/
 .section-header {
-    height: 50px;
+    height: 80px;
     padding-top: 20px;
+    margin-bottom: 20px;
+    /*border: solid 1px #0a0a0a;*/
 }
 .page-title h1,
 .page-title h2,

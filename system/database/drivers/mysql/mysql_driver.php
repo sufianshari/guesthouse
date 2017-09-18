@@ -454,7 +454,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	 */
 	public function error()
 	{
-		return array('code' => mysql_errno($this->conn_id), 'message' => mysql_error($this->conn_id));
+		return array('code' => mysql_errno($this->conn_id), 'Hubungi' => mysql_error($this->conn_id));
 	}
 
 	// --------------------------------------------------------------------

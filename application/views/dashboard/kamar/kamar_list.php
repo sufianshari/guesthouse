@@ -44,7 +44,6 @@
                     <th class="text-center">Gambar</th>
                     <th class="text-center">Action</th>
                 </tr><?php
-                $start=0;
                 foreach ($kamar_data as $kamar)
                 {
                     ?>
